@@ -1,0 +1,38 @@
+{
+  "name": "vision-board",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "../visionboard.js",
+  "dependencies": {
+    "@fullcalendar/bootstrap": "^4.0.1",
+    "@fullcalendar/core": "^4.0.2",
+    "@fullcalendar/daygrid": "^4.0.1",
+    "@fullcalendar/interaction": "^4.0.2",
+    "@fullcalendar/resource-timegrid": "^4.0.1",
+    "@fullcalendar/timegrid": "^4.0.1",
+    "lodash.isfinite": "^3.3.2",
+    "style-loader": "^0.23.1",
+    "webpack-cli": "^3.3.0",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "css-loader": "^2.1.1",
+    "gulp-sass": "^4.0.2",
+    "jquery": "^3.3.1",
+    "node-sass": "^4.11.0",
+    "run-sequence": "^2.2.1",
+    "webpack": "^4.29.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass -w sass/ -o css/",
+    "start": "browser-sync start --server --no-open --files 'css/*.css, ./*.html, dist/*.js'",
+    "build": "webpack --mode production --watch",
+    "dev": "webpack --mode production --watch"
+  },
+  "author": "Tina",
+  "license": "ISC"
+}

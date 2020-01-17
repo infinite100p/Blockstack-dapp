@@ -1,0 +1,213 @@
+//colors
+$cyan_aqua:  cyan;
+$white: #fff;
+$black_20: rgba(0, 0, 0, 0.2);
+$black: #000;
+
+//urls
+$url_0: url(../wallpapers/12.jpg);
+$url_1: url(http://s1.1zoom.me/big0/27/Sky_Water_Night_Moon_476147.jpg);
+$url_2: url(https://wallpapersite.com/images/wallpapers/moon-2560x1605-clouds-sky-full-hd-1519.jpg);
+$url_3: url(https://www.wallpaperup.com/uploads/wallpapers/2015/12/03/848678/eae08de416f98887fbf085b23668024f-700.jpg);
+$url_4: url(../wallpapers/8.jpg);
+$url_5: url(../wallpapers/wolf-spirit.jpg);
+$url_6: url(../wallpapers/9.jpg);
+$url_7: url(../wallpapers/14.jpg);
+
+//@extend-elements
+//original selectors
+//html, body
+%html_body {
+	// background: ;
+	background: $url_2 no-repeat fixed center;
+	background-size: cover;
+	border-left: 2px solid $cyan_aqua !important;
+	color: $white;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+//original selectors
+//#top, footer
+%header_footer {
+	width: 100%;
+	height: 80px;
+	position: fixed;
+	left: 0;
+	background-color: $black;
+	color: $white;
+	font-weight: bolder;
+	z-index: 2;
+}
+
+
+html {
+	@extend %html_body;
+}
+body {
+	@extend %html_body;
+}
+#content {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 60%;
+	height: 30%;
+	padding: 20px;
+	text-align: center;
+	box-shadow: 0 0 30px $black_20;
+	border-radius: 25px;
+	z-index: 5;
+	letter-spacing: 0.1em;
+	// border: 2px solid cyan;
+}
+
+
+/* Calendar Styling */
+
+#calendar {
+	height: 70% !important;
+	width: 52% !important;
+	border: 2px solid cyan;
+	position: absolute;
+	left: 25%;
+	top: 7%;
+	z-index: 6;
+	visibility: hidden;
+}
+
+// .fc-day-grid-event > .fc-content, .fc-time-grid-event > .fc-content {
+//     white-space: normal !important;
+//     text-overflow: ellipsis;
+//     max-height:20px;
+// }
+// .fc-day-grid-event > .fc-content:hover, 
+// .fc-time-grid-event > .fc-content:hover {
+//     max-height:none!important; 
+//     background-color: #3788d8;
+// }
+
+.fc-day-grid-event, .fc-time-grid-event {
+	.fc-content {
+	    white-space: normal !important;
+	    text-overflow: ellipsis;
+	    max-height:20px;		
+
+	    &:hover {
+		    max-height:none!important; 
+		    background-color: #3788d8;
+	    }
+	}
+}
+
+.fc th, .fc td {
+	background-color: $black;
+}
+
+#quote {
+	position: relative;
+	transform: translateY(-50%);
+}
+.center {
+	text-align: center;
+}
+body::after {
+	background: $url_4;
+	background-size: cover;
+	opacity: 0.5;
+	z-index: -1;
+	content: "";
+	background: $black;
+	opacity: 0.4;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: 2;
+}
+#top {
+	@extend %header_footer;
+	top: 0;
+	height: 40px !important;
+	// vertical-align: middle;
+	// padding: 65px;
+	z-index: 5;
+	// margin-bottom: 25px;
+	position: absolute;
+	// margin-bottom: 85px;
+	// display: block;
+}
+#quote {
+	position: relative;
+	// vertical-align: middle;
+	// top: -35px;
+	top: 2px;
+	font-size: 1.15em;
+	letter-spacing: 0.1em;
+	
+	// margin-bottom: 85px;
+	// color: cyan;
+}
+#quote_content {
+	font-family: 'Courgette', sans-serif;
+}
+#author {
+	font-family: 'Itim', sans-serif !important;
+	font-size: 0.8em;
+}
+// #quote {
+// 	opacity: 0;
+// }
+#nextQuote {
+	
+}
+
+// .fadeIn {
+// 	opacity: 1 !important;
+// 	transition: opacity 1.6s ease 0s;
+// }
+
+// .fadeOut {
+// 	opacity: 0 !important;
+// 	transition: opacity 1.6s ease 0s;
+// }
+nav {
+	@extend %header_footer;
+	bottom: 0;
+	z-index: 5;
+}
+ul {
+	display: inline-block;
+	z-index: 6;
+}
+li {
+	list-style: none;
+	text-align: left;
+	display: inline-block;
+	z-index: 5;
+	:hover {
+		color: cyan;
+		cursor: default;
+		// cursor: url(../imgs/cupcake.png), auto;
+	}
+}
+#content #title {
+	top: -35%;
+}
+
+#reasons {
+  font-weight: bolder;
+  letter-spacing: 0.1em
+}
+
+// .overlay {
+// 	top: 0;
+// 	left: 0;
+// 	display: none;
+// 	background-color: $black;
+// 	z-index: 200;
+// }

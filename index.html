@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 	<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'> -->
+
+
+	<title></title>
+	<link href='https://use.fontawesome.com/releases/v5.0.6/css/all.css' rel='stylesheet'>
+	<link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' rel='stylesheet' />
+
+	<link href="https://fonts.googleapis.com/css?family=Courgette|Itim|Montserrat|Niconne" rel="stylesheet">
+
+
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+<!-- 	<link rel="stylesheet" type="text/css" href="./node_modules/@fullcalendar/core/main.css">
+	<link rel="stylesheet" type="text/css" href="./node_modules/@fullcalendar/daygrid/main.css"> -->
+</head>
+<body>
+	<div id="top" class="center"><span id="quote"></span></div>
+	<div id="content" class="blue_border">
+<!-- 		<div id="goalsContent" class="noshow">
+			<h8 class="title"></h8> <br>
+			<ul>
+			<li>Empty</li>
+			<li>Hopeless</li>
+			<li></li>
+			<li></li>
+			</ul>		
+			<p></p>
+
+			<h8 class="title">Lifelong Goals</h8><br>
+			<ul>
+			<li>Financial independence</li>
+			<li>Repay debt</li>
+			<li>Fund retirement</li>
+			<li>R.I.P</li>
+			</ul>		
+		</div> -->		
+
+		<div id="goalsContent" class="noshow">
+			<h8 class="title">2020 Vision Board</h8> <br>
+			<ul>
+			<li>Save</li>
+			<li>Get out</li>
+			<li>Hustle</li>
+			<li>Reassess life</li>
+			</ul>
+
+			<p></p>	
+
+			<h8 class="title">Lifelong Goals</h8><br>
+			<ul>
+			<li>Work &middot; Save &middot; Invest</li>
+			<li>F.I.</li>
+			<li>Trust fund</li>
+			<li>R.I.P</li>
+			</ul>
+
+			
+
+	
+			
+
+		
+		</div>
+
+		<!-- CALENDAR -->
+		<!-- Make every day count -->
+		<div id="calendarContent">
+			<!-- <div id="#fc_calendar"></div> -->
+		</div>
+
+		<!-- PERSONAL FINANCE -->
+		<div id="budgetContent" class="noshow">
+			<div id="financial">
+			    <div class="form-group">
+			        <h8>Short-Term Financial Goal</h8><br/><span class="md-font">(8-hr work days)</span><p></p>
+			        <label for="target_savings">Target Savings ($)</h8>
+					<input type="text" id="target" class="form-control  " placeholder="xxxx" value="2000"/>   
+
+			        <label for="amount_saved">Amount Saved ($)</label>
+			        <input type="text" id="saved" class="form-control " placeholder="xxx"/>
+			    
+			         <label for="wage">Hourly Wage (USD)</label>
+
+				        <input type="text" id="hourlyWage" class="form-control  " placeholder="xx" value="15"/>
+		      
+			        <button type="submit" id="calculateWorkDays" value="Calculate">Calculate</button>			        
+		    	</div>            
+		    	<p id="result"></p>
+			</div>
+		</div>
+
+		<!-- JOURNAL & DIARY -->
+		<!-- Track progress -->
+		<div id="journalContent" class="noshow">
+			<div class="btn_default btn_unclicked" id="journal_tab">Journal</div>
+			<div class="btn_default btn_unclicked" id="dream_tab">Dreams</div>
+			<div class="btn_sm round_border btn_unclicked" id="addEntry_btn"> <i class="fa fa-plus"></i> </div>
+			<!-- Journal -->
+			<div id="journal_log" class="newLine noshow">
+				<div class="journal_entry">
+					<span class="timeStamp">mm.dd.yy</span>
+					<p class="newEntry"></p> 
+					<span class="tag round_border">productive</span>				
+					<span class="tag round_border">sane</span>
+					<span class="tag round_border">smallsteps</span>
+				</div>
+				<p></p>
+				
+				<div class="journal_entry">
+					<span class="timeStamp">mm.dd.yy</span>
+					<p class="newEntry"></p> 
+					<span class="tag round_border">trapped</span>
+					<span class="tag round_border">stifled</span>
+					<span class="tag round_border">anxious</span>
+					<!-- <span class="tag round_border"></span> -->
+				</div>
+				<p></p>
+				
+				<div class="journal_entry">
+					<span class="timeStamp">mm.dd.yy</span>
+					<p class="newEntry"></p>
+					<span class="tag round_border">nocturnal</span>
+					<span class="tag round_border">undisturbed</span>
+					<span class="tag round_border">empty</span>
+				</div>
+			</div>
+
+			<!-- Dreams -->
+			<div id="dream_log" class="darkBackground newLine noshow">
+
+				<div class="dream_entry">
+					<span class="timeStamp">mm.dd.yy - 11am</span>
+					<p>Dream entry 1</p>
+					<span class="tag round_border">neardeath</span> 
+					<span class="tag round_border">relief</span> 
+					<br>
+				</div>
+
+				<div class="dream_entry">
+					<span class="timeStamp">mm.dd.yy - 1pm</span>
+					<p>Dream entry 3</p>
+					<span class="tag round_border">calm</span>
+					<br>
+				</div>					
+
+				<div class="dream_entry">
+					<span class="timeStamp">mm.dd.yy - 7pm</span>
+					<p>Dream entry 2</p>
+					<span class="tag round_border">noescape</span><br>
+					<span class="tag round_border">despair</span>
+					<span class="tag round_border">heartpounding</span>
+					<br>			
+				</div>
+
+				
+
+				<div class="dream_entry">
+					<span class="timeStamp">mm.dd.yy - 5am</span>
+					<p>Dream entry 4</p>
+					<span class="tag round_border">trapped</span>
+					<span class="tag round_border">crying</span><br>
+					<span class="tag round_border">hardtobreathe</span>				
+				</div>		
+
+				<div class="dream_entry">
+					<span class="timeStamp">mm.dd.yy - 2pm</span>
+					<p>Dream entry 5</p>
+					<span class="tag round_border">nostalgia</span>
+				</div>
+
+				<div class="dream_entry">
+					<span class="timeStamp">mm.dd.yy - 4am</span>
+					<p>Dream entry 6</p>	
+				</div>
+
+				<div class="dream_entry">
+					<span class="timeStamp">mm.dd.yy - 5am</span>
+					<p>Dream entry 7</p>
+				</div>	
+
+				<div class="dream_entry">
+					<span class="timeStamp">mm.dd.yy - 6pm</span>
+					<p>Dream entry 8</p>
+				</div>
+			</div>
+
+			<!-- Create new entry -->
+			<div id="create_entry" class="noshow">
+				<p></p>
+				<textarea rows="8" cols="40" value="" ></textarea> 
+			 	<p></p> 
+			 	<input type="radio" name="type" value="journal"> Journal
+			 	<input type="radio" name="type" value="dream"> Dream
+				
+				<br>
+<!-- 			 	<select>
+					<option value="1">1</option>
+					<option value="2">2</option>
+				</select> -->
+			 	<input class="btn-primary" type="submit" value="Save Log" />
+				<!-- <br>				 -->
+			</div>
+
+		</div>
+
+		<!-- HELP -->
+		<!-- current state -->
+		<div id="statusContent" class="noshow">
+			<h9></h9><p></p>
+			<h6 class="title pinkBorder">I am...</h6><br>
+
+			<p></p>
+			<button class="btn_default btn_unclicked">Not okay</button>	&nbsp;			
+			<button class="btn_default btn_unclicked">Fine</button>
+			<p></p>	
+		</div>			
+
+		<!-- MOTIVATION -->
+		<!-- Why Keep Going -->
+		<div id="motivationContent" class="noshow">	
+
+			<h9></h9><p></p>
+			<!-- <h6 class="title pinkBorder">Choose one:</h6><br> -->
+
+
+<!-- 			<h9></h9><p></p>
+			<h6 class="title pinkBorder">Feeling:</h6><br>
+				<ul>
+					<li>empty</li>
+					<li>unmotivated</li>
+					<li>lonely</li>
+					<li>anxious</li>
+					<li>hopeless</li>
+					<li>trapped</li>
+				</ul>
+			<p></p>
+			<button class="btn-primary">Help</button>	 -->
+	
+			<div class="btn_previous">
+				<i class="fa fa-chevron-circle-left"><span></span></i>
+			</div> 
+
+			<h6 class="title pinkBorder">Need Inspiration</h6>
+			<p></p>
+				<ul id="inspirationList">
+						<li><a>Ideation</a></li>
+						<li><a>Music</a></li>
+						<li><a>Innovation</a></li>
+						<li><a>People</a></li>	
+						<li><a>Podcasts</a></li>	
+					</ul><p></p>
+					<h6 class="title pinkBorder">Bucket List</h6>
+					<p></p>
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li> </li>	
+				</ul>					
+
+		</div>	
+
+		<div id="capsuleContent" class="noshow">
+			<div id="letter">
+				<h6 class="title pinkBorder">An e-letter to my future self.</h6>
+				<p></p> 
+				<div class="date"></div>
+				<br> 
+				<textarea rows="8" cols="40" value="" ></textarea> 
+			 	<p></p> 
+
+				<span id="verb">Receive</span> in 
+					<input type="number" value="1" min="1" max="10"></input>
+				 <span id="nYears">year</span> 
+				<p></p>
+				<select>
+			  	<option value="email">Email</option>
+			  	<option value="desktop">Desktop Notification</option></select>
+				<p></p>
+
+				<label></label> 
+				<input class="btn-primary" type="submit" value="Lock Away" />			  	
+			</div>
+		</div>		
+
+	</div>
+	<nav> 
+		<ul>
+			<!-- <ul class="memo">Memo</ul> -->
+			<li id="goals">Plan</li>
+			<li id="calendar">Days Ahead</li> <!-- calendar -->
+			<!-- <ul class="getaway">Getaway</ul> -->
+			<li id="budget">Budget</li>
+			<li id="journal">Journal / Dream Log</li>
+			<li id="status">Keep Going</li>
+
+			<li id="capsule">Time Capsule</li>
+		</ul>
+	</nav>
+	<script type="text/javascript" src="public/js/jquery-3.3.1.min.js"></script>
+	<!-- <script type="text/javascript" src="src/visionboard.js"></script> -->
+	<script src="dist/main.js"></script>
+</body>
+</html>

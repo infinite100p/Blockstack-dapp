@@ -1,0 +1,12 @@
+.DS_Store
+brainstorm.txt
+js/calendar.js
+js/visionboard (dynamic).js
+node_modules/
+screenshots/
+homescreen.html
+wallpapers/
+wallpapers_other/
+imgs/
+.env
+
