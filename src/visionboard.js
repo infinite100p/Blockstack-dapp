@@ -1,19 +1,23 @@
-import { Calendar } from '../../node_modules/@fullcalendar/core';
-import dayGridPlugin from '../../node_modules/@fullcalendar/daygrid';
+import FullCalendar from '@fullcalendar/react'
+
+import { Calendar } from '@fullcalendar/core';
+import dayGridPlugin from '@fullcalendar/daygrid';
 import bootstrapPlugin from '@fullcalendar/bootstrap';
 import interactionPlugin from '@fullcalendar/interaction';
 import timegridPlugin from '@fullcalendar/timegrid';
 import resourceTimeGridPlugin from '@fullcalendar/resource-timegrid';
 
-import '../../node_modules/@fullcalendar/core/main.css'
-import '../../node_modules/@fullcalendar/daygrid/main.css'
-import '../../node_modules/@fullcalendar/bootstrap/main.css'
-import '../../node_modules/@fullcalendar/timegrid/main.css'
+import '@fullcalendar/core/main.css'
+import '@fullcalendar/daygrid/main.css'
+import '@fullcalendar/bootstrap/main.css'
+import '@fullcalendar/timegrid/main.css'
 
-import * as blockstack from '../../node_modules/blockstack';
+// import * as blockstack from 'blockstack';
+import $ from "jquery"
+// import Fullcalendar from '@fullcalendar';
 
-const appConfig = new blockstack.AppConfig()
-const userSession = new blockstack.UserSession({ appConfig: appConfig })
+// const appConfig = new blockstack.AppConfig()
+// const userSession = new blockstack.UserSession({ appConfig: appConfig })
 
 // import './calendar.js'
 
@@ -23,11 +27,11 @@ require('./calendar.js');
 // const blockstackFunc = require('./blockstack-login.js');
 // require('./blockstack-login.js'); 
 
-const cors = require('../../node_modules/cors');
-const express = require('../../node_modules/express');
-let app = express();
-app.use(cors());
-app.options('*', cors());
+// const cors = require('./node_modules/cors');
+// const express = require('./node_modules/express');
+// let app = express();
+// app.use(cors());
+// app.options('*', cors());
 
 // app.all('*', function (req, res) {
 //     res.header("Access-Control-Allow-Origin", "*");
@@ -57,20 +61,20 @@ app.options('*', cors());
 //   next();
 // });
 
-app.all('*', function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Credentials', true);
-  res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
-  next();
-});
+// app.all('*', function(req, res, next) {
+//   res.header('Access-Control-Allow-Origin', '*');
+//   res.header('Access-Control-Allow-Credentials', true);
+//   res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+//   res.header('Access-Control-Allow-Headers', 'Content-Type');
+//   next();
+// });
 
-let allowCrossDomain = function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', "*");
-  res.header('Access-Control-Allow-Headers', "*");
-  next();
-}
-app.use(allowCrossDomain);
+// let allowCrossDomain = function(req, res, next) {
+//   res.header('Access-Control-Allow-Origin', "*");
+//   res.header('Access-Control-Allow-Headers', "*");
+//   next();
+// }
+// app.use(allowCrossDomain);
 
 
 // Add headers
@@ -105,6 +109,10 @@ app.use(allowCrossDomain);
 
 // var calendar = calendarSrc.calendarFunctions;
 
+// module.exports = {
+//     // add:add,
+//     activeTab:activeTab
+// }
 
 var quotes = [
 	{quote: "Sometimes later becomes never. Do it now.", author: "Unknown"}, 
@@ -155,7 +163,7 @@ $(document).ready(function () {
 
 	$('#budget').click();
 
-	blockstackInit();
+	// blockstackInit();
 
 	// $.getScript('./blockstack-login.js', function(){
 	// 	   blockstackInit();
@@ -175,45 +183,45 @@ function blockstackAuth() {
 	$('#result').append(userLogin);	
 }
 
-function blockstackInit() {
-  console.log(`blockstack-login.js loaded!`);
+// function blockstackInit() {
+//   console.log(`blockstack-login.js loaded!`);
 
-  // document.addEventListener("DOMContentLoaded", function () {
-      document.getElementById('signin-button').addEventListener('click', function (event) {
-        console.log(`blockstack-login.js loaded (vanilla js)!`);
-        event.preventDefault()
-        userSession.redirectToSignIn()
-      })
-      document.getElementById('signout-button').addEventListener('click', function (event) {
-        event.preventDefault()
-        userSession.signUserOut(window.location.href)
-      })
+//   // document.addEventListener("DOMContentLoaded", function () {
+//       document.getElementById('signin-button').addEventListener('click', function (event) {
+//         console.log(`blockstack-login.js loaded (vanilla js)!`);
+//         event.preventDefault()
+//         userSession.redirectToSignIn()
+//       })
+//       document.getElementById('signout-button').addEventListener('click', function (event) {
+//         event.preventDefault()
+//         userSession.signUserOut(window.location.href)
+//       })
 
-      function showProfile(profile) {
-        var person = new blockstack.Person(profile)
-        document.getElementById('heading-name').textContent = person.name() ? person.name() : "Nameless Person"
-        if (person.avatarUrl()) {
-          document.getElementById('avatar-image').setAttribute('src', person.avatarUrl())
-        }
-        else {
-          document.getElementById('avatar-image').setAttribute('src', './avatar-placeholder.png')
-        }
-        document.getElementById('section-1').style.display = 'none'
-        document.getElementById('section-2').style.display = 'block'
-      }
+//       function showProfile(profile) {
+//         var person = new blockstack.Person(profile)
+//         document.getElementById('heading-name').textContent = person.name() ? person.name() : "Nameless Person"
+//         if (person.avatarUrl()) {
+//           document.getElementById('avatar-image').setAttribute('src', person.avatarUrl())
+//         }
+//         else {
+//           document.getElementById('avatar-image').setAttribute('src', './avatar-placeholder.png')
+//         }
+//         document.getElementById('section-1').style.display = 'none'
+//         document.getElementById('section-2').style.display = 'block'
+//       }
 
-      if (userSession.isUserSignedIn()) {
-        var profile = userSession.loadUserData().profile;
-        showProfile(profile);
-        console.log('user signed in');
-      } else if (userSession.isSignInPending()) {
-        userSession.handlePendingSignIn().then(function (userData) {
-          window.location = window.location.origin
-          console.log('user sign in pending');
-        })
-      }
-    // })
-}
+//       if (userSession.isUserSignedIn()) {
+//         var profile = userSession.loadUserData().profile;
+//         showProfile(profile);
+//         console.log('user signed in');
+//       } else if (userSession.isSignInPending()) {
+//         userSession.handlePendingSignIn().then(function (userData) {
+//           window.location = window.location.origin
+//           console.log('user sign in pending');
+//         })
+//       }
+//     // })
+// }
 
 /* Start Calendar */
 
@@ -300,7 +308,7 @@ function renderCalendar() {
 
 	console.log(`holidayEvt id: ${events[4].id}`);
 
-  //  calendarEl.fullCalendar( 'renderEvent', event, true);				
+   // calendarEl.fullCalendar( 'renderEvent', event, true);				
 
   var calendar = new Calendar(calendarEl, {
     plugins: [ dayGridPlugin, bootstrapPlugin, interactionPlugin, timegridPlugin, resourceTimeGridPlugin ],
@@ -442,25 +450,25 @@ function getQuotes() {
 // }
 
 
-function wordLoop() {
-    var rollover = document.getElementById('description');
-    x = 3;
+// function wordLoop() {
+//     var rollover = document.getElementById('description');
+//     x = 3;
 
-    for (var i = 0; i < words.length; i++) {
-          (function(i){
-            setTimeout(function(){ 
-              rollover.innerHTML = words[i];
-          }, 2000 * i)
-         })(i);
-         // setInterval(wordLoop, 2000);
-        // rollover.setAttribute('class', 'animated fadeIn'); 
+//     for (var i = 0; i < words.length; i++) {
+//           (function(i){
+//             setTimeout(function(){ 
+//               rollover.innerHTML = words[i];
+//           }, 2000 * i)
+//          })(i);
+//          // setInterval(wordLoop, 2000);
+//         // rollover.setAttribute('class', 'animated fadeIn'); 
 
 
-        // rollover.innerHTML = words[i];
-    }
-    setTimeout(wordLoop, x * words.length * 1000);
+//         // rollover.innerHTML = words[i];
+//     }
+//     setTimeout(wordLoop, x * words.length * 1000);
 
-}
+// }
 
 //function to calculate window height
 function getWindowHeight() {
@@ -470,7 +478,8 @@ function getWindowHeight() {
 
 
 // nav link event listeners on mouse click
-function clickEventListener() {
+export function clickEventListener() {
+	console.log('clickEventListener')
 	let previousNavItem; // previousNavItemly clicked nav item
 
 	$(`nav > ul > li`).on('click', function() {
@@ -506,30 +515,36 @@ function clickEventListener() {
 }
 
 function displayContent(content) {
-		switch (true) {
-			case (content.is(calendarContent)):
+	console.log(`displayContent: ${content.attr('id')}`);
+		switch (content.attr('id')) {
+			case ('calendarContent'):
 				getCalendar();
 				break;			
 
-			case (content.is(budgetContent)):
+			case ('budgetContent'):
+			console.log(`OK: ${content.attr('id')}`);
 				getDefault(content);
 				calculateWorkDays();
 				// blockstackAuth();
 				break;
 
-			case (content.is(journalContent)):
-				getDefault(content);
+			case ('journalContent'):
+				console.log(`OK: ${content.attr('id')}`);
 				activeTab();
-				// printLoremIpsum();
-				$('#journal_tab').click();
+				getDefault(content).then(() => {
+					$('#journal_tab').click();
+					})				
 				break;
 
-			case (content.is(statusContent)):
-				getDefault(content);
+			case ('statusContent'):
 				getEmotionalState();
+				getDefault(content).then(() => {
+					getEmotionalState();
+					// $('#state_struggling').click();
+				});
 				break;				
 
-			case (content.is(capsuleContent)):
+			case ('capsuleContent'):
 				getDefault(content);
 				getCapsule();
 				break;			
@@ -542,6 +557,7 @@ function displayContent(content) {
 
 // set or reset to default
 function getDefault(content) {
+	let dfd = $.Deferred();
 				addBorder();
 				hideScrollbar();
 
@@ -549,6 +565,9 @@ function getDefault(content) {
 				// clearContent();
 
 				showContent(content);
+
+	dfd.resolve()
+	return dfd.promise();				
 
 				// $(contentID).removeClass('noshow');
 				// $(contentID).addClass('show');
@@ -574,10 +593,10 @@ function getCalendar() {
 
 			// console.log(`childNodes: ${$('.thanksgiving .fc-content .fc-title')[0].childNodes.length}`); // 1
 
-			if ($('.thanksgiving .fc-content .fc-title')[0].childNodes.length == 1) {
-					console.log(`no icon`);
-					holidayTitle.prepend(exclamationIcon);
-			}	
+			// if ($('.thanksgiving .fc-content .fc-title')[0].childNodes.length == 1) {
+			// 		console.log(`no icon`);
+			// 		holidayTitle.prepend(exclamationIcon);
+			// }	
 
 			// $('#calendarContent').css('width', '100%');
 	// $('#calendarContent').css('height', '100%');
@@ -587,8 +606,10 @@ function getCalendar() {
 			$('#calendarContent').css('margin-top', '8%');
 }
 
+
 // initialize values
-function init() {
+export function init() {
+	console.log('init from DOM');
 	// $('#content').css('margin-top', '0');
 	setContentSize('70%', '570'); // (w, h)
 	clearContent();
@@ -659,7 +680,9 @@ function addBorder() {
 	$('#content').css('border', '2px solid cyan');
 }
 
-function getEmotionalState() {
+export function getEmotionalState() {
+	console.log('getEmotionalState');
+	let statusContent = $('#statusContent')
 	let statusContentId = `#${statusContent.attr('id')}`;
 	// let motivationContent = $('#motivationContent');
 	let status_struggling = $(statusContentId + ' button')[0];
@@ -668,7 +691,7 @@ function getEmotionalState() {
 
 	let contentID;
 
-	$(status_struggling).on('click', () => {
+	$('#state_suicidal').on('click', () => {
 		contentID = '#motivationContent';
 
 		console.log(`statusContent id: ${statusContentId}`);
@@ -676,7 +699,7 @@ function getEmotionalState() {
 		hideContent(statusContent);
 		showContent($('#motivationContent'));
 	})
-	$(status_fine).on('click', () => {
+	$('#state_fine').on('click', () => {
 		hideContent(statusContent);
 		showContent($('#goalsContent'))
 	})
@@ -695,7 +718,7 @@ function getCapsule() {
 	let placeholder = ' \n In this moment: \n \n In the future: \n'
 	$('textarea').attr('placeholder', placeholder);
 
-	togglePlaceholder(); // doesn't work - bug
+	// togglePlaceholder(); // doesn't work - bug
 
 	// current date & time
 	setInterval(printDate, 1000);
@@ -731,14 +754,17 @@ function printVerb() {
 }
 
 function togglePlaceholder() {
-	$('textarea').focus(function(){
+	let placeholder = '';
+
+	$('#newgoal').focus(function(){
 		console.log('in focus');
-	    if($(this).val() === placeholder){
-	        $(this).attr('placeholder', '');
+	    if($(this).val().length > 0){
+	    	$(this).val('');
+	        // $(this).attr('placeholder', '');
 	    }
 	});
 
-	$('textarea').blur(function(){
+	$('#newgoal').blur(function(){
 	    if($(this).val() ===''){
 	        $(this).attr('placeholder', placeholder);
 	    }    
@@ -790,7 +816,9 @@ function displayHTML(elmtsArr, id) {
 	})
 }
 
-function activeTab() {
+export function activeTab() {
+	let dfd = $.Deferred();
+
 	let journal = $('#journal_log');
 	let dream = $('#dream_log');
 	let create_entry = $('#create_entry');
@@ -821,6 +849,8 @@ function activeTab() {
 				break;
 		}	
 
+		dfd.resolve();
+
 		// highlight tab clicked
 		highlightTab($(this));
 
@@ -834,6 +864,7 @@ function activeTab() {
 	})
 
 	showScrollbar();
+	return dfd.promise();
 }
 
 function hideScrollbar() {

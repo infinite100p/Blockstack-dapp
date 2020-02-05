@@ -1,0 +1,10 @@
+{
+  "name": "Vision Board",
+  "start_url": "localhost:3000",
+  "description": "Vision Board",
+  "icons": [{
+    "src": "https://www.iconbunny.com/icons/media/catalog/product/cache/2/thumbnail/600x/1b89f2fc96fc819c2a7e15c7e545e8a9/5/6/564.10-cherry-cupcake-icon-iconbunny.jpg",
+    "sizes": "192x192",
+    "type": "image/png"
+  }]
+}

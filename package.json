@@ -3,36 +3,90 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
-  "main": "../visionboard.js",
+  "type": "module",
   "dependencies": {
     "@fullcalendar/bootstrap": "^4.0.1",
     "@fullcalendar/core": "^4.0.2",
     "@fullcalendar/daygrid": "^4.0.1",
     "@fullcalendar/interaction": "^4.0.2",
+    "@fullcalendar/react": "^4.3.0",
     "@fullcalendar/resource-timegrid": "^4.0.1",
     "@fullcalendar/timegrid": "^4.0.1",
+    "axios": "^0.18.1",
+    "blockstack": "^19.3.0",
+    "bootstrap": "^4.4.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http": "0.0.0",
     "lodash.isfinite": "^3.3.2",
+    "react": "^16.12.0",
+    "react-datepicker": "^2.11.0",
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.0.1",
     "style-loader": "^0.23.1",
-    "webpack-cli": "^3.3.0",
+    "typescript": "^2.2.1",
     "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {
+    "browser-resolve": "^1.11.3",
     "browser-sync": "^2.26.3",
     "browser-sync-webpack-plugin": "^2.2.2",
     "css-loader": "^2.1.1",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.18.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "esmify": "^2.1.1",
+    "fs": "0.0.1-security",
     "gulp-sass": "^4.0.2",
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.1",
     "node-sass": "^4.11.0",
     "run-sequence": "^2.2.1",
-    "webpack": "^4.29.6"
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-middleware": "^3.7.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "node-sass -w sass/ -o css/",
-    "start": "browser-sync start --server --no-open --files 'css/*.css, ./*.html, dist/*.js'",
+    "browserify": "browser-sync start --server --no-open --files 'css/*.css, ./*.html, dist/*.js'",
+    "webpack-start": "webpack-dev-server",
     "build": "webpack --mode production --watch",
-    "dev": "webpack --mode production --watch"
+    "dev": "webpack-dev-server --no-open",
+    "server": "node webpack/server.js",
+    "bundle2": "watchify public/js/visionboard.js -o dist/main2.js",
+    "bundle": "browserify public/js/visionboard.js -p esmify > dist/main2.js",
+    "start": "BROWSER=chrome PORT=3100 react-scripts start"
   },
   "author": "Tina",
-  "license": "ISC"
+  "license": "ISC",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules"
+  ],
+  "eslintConfig": {
+    "rules": {
+      "no-console": "off",
+      "no-unused-expressions": "off"
+    },
+    "env": {
+      "browser": true,
+      "node": true
+    }
+  }
 }

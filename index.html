@@ -18,6 +18,15 @@
 <body>
 	<div id="top" class="center"><span id="quote"></span></div>
 	<div id="content" class="blue_border">
+		<!-- Blockstack sign in -->
+		<a href="#" class="btn btn-primary btn-lg" id="signin-button">
+                Sign In
+      	</a>		
+      	<h1><span id="heading-name"></span></h1>
+      	<img class="img-rounded avatar" id="avatar-image">
+      	<a href="#" class="btn btn-primary btn-lg" id="signout-button">
+                Sign Out
+      	</a>
 <!-- 		<div id="goalsContent" class="noshow">
 			<h8 class="title"></h8> <br>
 			<ul>
@@ -38,7 +47,85 @@
 		</div> -->		
 
 		<div id="goalsContent" class="noshow">
-			<h8 class="title">2020 Vision Board</h8> <br>
+			<h8 class="title"><span id="thisYear">2020</span> Vision Board</h8> 
+			<i class="fa fa-list-ul" aria-hidden="true"></i>
+
+		<div class="container">
+		  <div class="row">
+	  	    <div contenteditable="true" data-ph="cool" class="goal col-sm">
+	  	    	<!-- <img class="tags-icon" src="imgs/tags-icon.png"/> -->
+	  	    	<!-- <i class="fa fa-tags" aria-hidden="true"></i> -->
+		      create vision board
+		    </div>
+		    <div class="goal col-sm">
+		    	<i class="fa fa-tags" aria-hidden="true"></i>
+		      + new goal
+		    </div>		    
+		    <div class="goal col-sm">
+		    	<i class="fa fa-tags" aria-hidden="true"></i>
+		      + new goal
+		    </div>		    
+		    <div class="goal col-sm">
+		    	<i class="fa fa-tags" aria-hidden="true"></i>
+		      + new goal
+		    </div>		    
+<!-- 		    <div class="goal col-sm">
+		    	<i class="fa fa-tags" aria-hidden="true"></i>
+		      + new goal
+		    </div>		    
+		    <div class="goal col-sm">
+		    	<i class="fa fa-tags" aria-hidden="true"></i>
+		      career 6
+		    </div> -->
+		  </div>		  
+
+		  <div class="row">
+	  	    <div class="goal col-sm">
+	  	    	<i class="fa fa-tags" aria-hidden="true"></i>
+		     + New Goal
+		    </div>
+		    <div class="goal col-sm">
+		    	<i class="fa fa-tags" aria-hidden="true"></i>
+		     + small goal
+		    </div>		    
+		    <div class="goal col-sm">
+		    	<i class="fa fa-tags" aria-hidden="true"></i>
+		    + small goal
+		    </div>	  	    
+		    <div class="goal col-sm">
+		    	<i class="fa fa-tags" aria-hidden="true"></i>
+		     + New Goal
+		    </div>
+<!-- 		    <div class="goal col-sm">
+		    	<i class="fa fa-tags" aria-hidden="true"></i>
+		     + new goal
+		    </div>		    
+		    <div class="goal col-sm">
+		    	<i class="fa fa-tags" aria-hidden="true"></i>
+		    + new goal
+		    </div> -->
+		  </div>		  
+
+		  <div class="row">
+	  	    <div class="goal col">
+		      + BIG GOAL
+		    </div>
+		    <div class="goal col">
+		      + BIG GOAL
+		    </div>
+		  </div>
+
+<!-- 		  <div class="row">
+	  	    <div class="goal col">
+		      + BIG GOAL
+		    </div>
+		    <div class="goal col">
+		      + BIG GOAL
+		    </div>
+		  </div> -->
+		</div>
+ 
+<!-- 			<br/>
 			<ul>
 			<li>Save</li>
 			<li>Get out</li>
@@ -54,7 +141,7 @@
 			<li>F.I.</li>
 			<li>Trust fund</li>
 			<li>R.I.P</li>
-			</ul>
+			</ul> -->
 
 			
 
@@ -74,8 +161,23 @@
 		<div id="budgetContent" class="noshow">
 			<div id="financial">
 			    <div class="form-group">
-			        <h8>Short-Term Financial Goal</h8><br/><span class="md-font">(8-hr work days)</span><p></p>
-			        <label for="target_savings">Target Savings ($)</h8>
+			        <h8>Short-Term Financial Goal</h8>
+			        <br/>
+			        <!-- <i class="fas fa-sort-up"> </i> -->
+			        <!-- <i class="fas fa-sort-down"> </i> -->
+					<!-- <i class="fa fa-minus"> &nbsp; </i> -->
+
+			        <span class="md-font">(<span id="dailyWorkHrs"> 8</span>-hr work days) </span> 
+
+			        <p>Current balance: $50</p>
+			        <p>Target savings: 2000</p>
+			        <p>$1500</p>
+
+			        <!-- <i class="fa fa-plus"> &nbsp;</i> -->
+			        <p></p>
+
+
+<!-- 			        <label for="target_savings">Target Savings ($)</h8>
 					<input type="text" id="target" class="form-control  " placeholder="xxxx" value="2000"/>   
 
 			        <label for="amount_saved">Amount Saved ($)</label>
@@ -85,8 +187,9 @@
 
 				        <input type="text" id="hourlyWage" class="form-control  " placeholder="xx" value="15"/>
 		      
-			        <button type="submit" id="calculateWorkDays" value="Calculate">Calculate</button>			        
-		    	</div>            
+			        <button type="submit" id="calculateWorkDays" value="Calculate">Calculate</button>	 -->		        
+		    	</div> 
+			        <i class="fa fa-edit" aria-hidden="true"></i>		    	           
 		    	<p id="result"></p>
 			</div>
 		</div>
@@ -212,8 +315,8 @@
 			<h6 class="title pinkBorder">I am...</h6><br>
 
 			<p></p>
-			<button class="btn_default btn_unclicked">Not okay</button>	&nbsp;			
-			<button class="btn_default btn_unclicked">Fine</button>
+			<button class="btn_default btn_unclicked">Struggling</button>	&nbsp;			
+			<button class="btn_default btn_unclicked">Alright</button>
 			<p></p>	
 		</div>			
 
@@ -245,8 +348,14 @@
 			<h6 class="title pinkBorder">Need Inspiration</h6>
 			<p></p>
 				<ul id="inspirationList">
-						<li><a>Ideation</a></li>
-						<li><a>Music</a></li>
+						<li>
+							<!-- <img class="icon" src="imgs/lightbulb-icon.png"/> -->
+							<a>Ideation</a>
+						</li>
+						<li>
+						<!-- <img class="icon" src="imgs/video-icon.png"/>		 -->
+							<a>Media</a>
+						</li>
 						<li><a>Innovation</a></li>
 						<li><a>People</a></li>	
 						<li><a>Podcasts</a></li>	
@@ -287,6 +396,10 @@
 
 	</div>
 	<nav> 
+
+	<!-- BADGES -->
+
+		<!-- NAV -->
 		<ul>
 			<!-- <ul class="memo">Memo</ul> -->
 			<li id="goals">Plan</li>
@@ -297,6 +410,9 @@
 			<li id="status">Keep Going</li>
 
 			<li id="capsule">Time Capsule</li>
+			<li id="notification">
+				<i class="fa fa-bell" aria-hidden="true"></i>
+			</li>
 		</ul>
 	</nav>
 	<script type="text/javascript" src="public/js/jquery-3.3.1.min.js"></script>

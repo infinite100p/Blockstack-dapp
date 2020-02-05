@@ -1,11 +1,12 @@
 .DS_Store
 brainstorm.txt
+budget_brainstorm.txt
 js/calendar.js
 js/visionboard (dynamic).js
+js/goals.js
 node_modules/
 screenshots/
 homescreen.html
-wallpapers/
+index2.html
 wallpapers_other/
-imgs/
 .env

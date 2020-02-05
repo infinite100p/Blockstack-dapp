@@ -1,0 +1,50 @@
+Target Savings
+Current Savings
+
+hourly wage, daily work hours 
+
+Income / Earned (+)
+Expense / Spent (-)
+
+net balance
+
+
+---
+vision board (Plan)
+  format: sequence, bullet list (cross out/check when complete)
+
+Current balance: (pre-tax | after-tax)
+
+Job 1: $15/hr M-F
+Job 2: $16/hr Sa-Su
+
+Feb 5 (wed)
+M (before end work hour): 5 weekdays, 1 weekend
+T (before end work hour): 4 weekdays, 1 weekend
+W (before end work hour): 3 weekdays, 1 weekend
+Th (before end work hour): 2 weekdays, 1 weekend
+F (before end work hour): 1 weekday, 1 weekend
+Sa (before end work hour): 0 weekdays, 1 weekend
+Su (before end work hour): 0 weekdays, 1/2 weekend
+
+{"M": {"weekdays": 5, "weekend": 1}, {"weekdays": 4, "weekend": 1}, {"weekdays": 3, "weekend": 1}, {"weekdays": 2, "weekend": 1}, {"weekdays": 1, "weekend": 1}, {"weekdays": 0, "weekend": 1}, {"weekdays": 0, "weekend": 0.5}]}
+
+// before last work hour for the day
+[
+{"weekdays": 5, "weekend": 1}, 
+{"weekdays": 4, "weekend": 1}, 
+{"weekdays": 3, "weekend": 1}, 
+{"weekdays": 2, "weekend": 1}, 
+{"weekdays": 1, "weekend": 1}, 
+{"weekdays": 0, "weekend": 1}, 
+{"weekdays": 0, "weekend": 0.5}
+]
+
+wkday = 5, wknd = 1
+if (today == 0) -> 
+
+need $1000
+
+
+--
+soundcloud music (upbeat/uplifting, slow/soulful) - playlists | podcasts
